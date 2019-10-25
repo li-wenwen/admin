@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="static/vue.js"></script>
+    <script src="static/vue-router.js"></script>
+    <title>router</title>
+</head>
+<style>
+    .router-link-exact-active {
+        color: #eb7350;
+    }
+</style>
+<body>
+<div id="app">
+    <router-link to="/index">首页</router-link>
+    <router-link to="/list">列表</router-link>
+    <router-link to="/show/1">详情1</router-link>
+    <router-link to="/show/2">详情2</router-link>
+    <router-link to="/show/3">详情3</router-link>
+    <hr>
+    <h3>编程式导航</h3>
+    <button @click="changeRouter('index')">首页</button>
+    <button @click="changeRouter('list')">列表</button>
+    <hr>
+    <h3>命名路由</h3>
+    <router-link :to="{name:'index'}">首页</router-link>
+    <router-link :to="{name:'list'}">列表</router-link>
+    <router-link :to="{name:'show',params:{id:1}}">详情1</router-link>
+    <h3>组件</h3>
+    <router-view></router-view>
+</div>
+
+<script>
+    //1.地址输入进来->显示到那里去 2.告诉他渲染到哪里去
+
+    // 1. 定义 (路由) 组件。
+    let index = {template:"<div><h1>index</h1></div>"};
+    let list = {template:`<div>
+        <h1>list</h1>
+        <router-link to="/list/news">新闻</router-link>
+        <router-link to="/list/goods">商品</router-link>
+
+        <router-link :to="{name:'news'}">新闻</router-link>
+        <router-link :to="{name:'goods'}">商品</router-link>
+        <router-view></router-view>
+    </div>`};
+    let show = {template:"<div><h1>show</h1></div>"};
+    let news = {template:"<div><h1>list >>> news</h1></div>"};
+    let goods = {template:"<div><h1>list >>> goods</h1></div>"};
+    // 2. 定义路由
+    // 每个路由应该映射一个组件。 其中"component" 可以是
+    // 通过 Vue.extend() 创建的组件构造器，
+    let routes = [
+        {path:'/index',component:index,name:'index'},
+        {path:'/list',component:list,name:'list',
+            redirect: '/list/news',
+            //redirect:{name:'news'},
+         children:[
+             {path:'news',component:news,name:'news'},
+             {path:'goods',component:goods,name:'goods'},
+         ]
+        },
+        //{path:'/show',component:show},
+        {path:'/show/:id',component:show,name:'show'},//动态路由
+    ];
+    // 3. 创建 router 实例，然后传 `routes` 配置
+    let router = new VueRouter({
+        routes// (缩写) 相当于 routes: routes
+    })
+    // 4. 创建和挂载根实例。
+    // 记得要通过 router 配置参数注入路由，
+    // 从而让整个应用都有路由功能
+    let vue = new Vue({
+        el:"#app",
+        router,
+        methods:{
+            changeRouter(name){
+                this.$router.push({name});
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

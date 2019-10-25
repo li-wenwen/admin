@@ -1,0 +1,26 @@
+{
+  "name": "helloword",
+  "version": "1.0.0",
+  "description": "this is dexcription",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "node http.js"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "包管理工具",
+    "初始化应用"
+  ],
+  "author": "qyt",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.4.4",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0"
+  }
+}

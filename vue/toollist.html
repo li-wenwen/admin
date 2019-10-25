@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>备忘录</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="static/vue.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        user-select: none;
+    }
+    .box{
+        height: 60px;
+        position: relative;
+    }
+    .box>ul{
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .box>ul>li{
+        position: relative;
+        flex:1;
+        text-align: center;
+        line-height: 60px;
+        border: 1px darkgray solid;
+        z-index: 99;
+    }
+    .box > ul > li.active:nth-child(1){
+        transform: translate3d(0, 0, 0);
+    }
+    .box > ul > li.active:nth-child(2) ~ .bg {
+        transform: translate3d(100%, 0, 0);
+    }
+    .box > ul > li.active:nth-child(3) ~ .bg {
+        transform: translate3d(200%, 0, 0);
+    }
+    .bg{
+        background-color: #F5F5F5;
+        width: 33.333%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        transition: transform cubic-bezier(0.93, 0.22, 0.1, 0.87) .3s;
+    }
+</style>
+<body>
+<div id="app">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" v-model="list.content" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" @click.prevent="addList" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-offset2">
+                <div class="box">
+                    <ul>
+                        <li @click="changeCate(cate.id)" :class="{active:cate.id==currentCate}" v-for="cate in cates">
+                            {{cate.name}}
+                        </li>
+                        <div class="bg"></div>
+                    </ul>
+                </div>
+                <div class="pannel">
+                    <ul class="list-group">
+                        <li class="list-group-item" :style="{background:list.status?'#FCE5E5':'#FCF8E3'}" v-for="list in viewlist">
+                            {{list.content}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            currentCate:1,
+            cates:[
+                {id:1,name:"全部"},
+                {id:2,name:"已完成"},
+                {id:3,name:"未完成"},
+            ],
+            todolist:[
+                {id:1,content:'开题报告，任务书，下周一',status:false},
+                {id:2,content:'简历，下周四',status:false},
+                {id:3,content:'协同开发计划，下周一',status:false},
+                {id:4,content:'评审，下周六',status:false},
+                {id:5,content:'过程化项目',status:true},
+            ],
+            list:{
+                id:0,content:'',status:false
+            }
+        },
+        computed:{
+            viewlist(){
+                let arr = [];
+                if(this.currentCate == 1){
+                    arr = this.todolist;
+                }else if(this.currentCate == 2){
+                    arr = this.todolist.filter(function (value,index) {
+                        return value.status;
+                    });
+                }else if(this.currentCate == 3){
+                    arr = this.todolist.filter(function (value,index) {
+                        return !value.status;
+                    });
+                }
+                return arr;
+            },
+        },
+        methods:{
+            addList(){
+                this.list.id = this.lastId();
+                // let obj = JSON.stringify(this.list),
+                //     objClone = JSON.parse(obj);
+                let obj = $.extend(true,{},this.list);
+                this.todolist.push(obj);
+                this.list.content = '';
+            },
+            lastId(){
+                return this.todolist[this.todolist.length - 1].id+1;
+            },
+            changeCate(id){
+                this.currentCate = id;
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

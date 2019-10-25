@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="static/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li>{{ num }}</li>
+        <li>{{ msg }}</li>
+        <li v-text="html">{{ html }}</li>
+    </ul>
+
+    <hr>
+
+    <h1>指令</h1>
+    <ul>
+        <li>v-html:能够解析标签对</li>
+        <li v-html="html">{{ html }}</li>
+    </ul>
+</div>
+
+<div id="second">
+    {{ msg }}
+</div>
+
+<script>
+    let app = new Vue({
+        el:'#app',
+        data:{
+            msg:'hahahahahaha',
+            num:66666,
+            html:'<b> 你好鸭 </b>'
+        }
+    });
+    let second = new Vue({
+        el:'#second',
+        data:{
+            msg:'hello word',
+        }
+    });
+
+</script>
+</body>
+</html>

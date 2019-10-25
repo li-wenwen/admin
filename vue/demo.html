@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .nav-tabs{
+        display: flex;
+        justify-content: space-between;
+    }
+    .haha{
+        width: 800px;
+        margin: 0 auto;
+    }
+    #box{
+        width: 800px;
+        margin: 0 auto;
+    }
+</style>
+
+<div id="box" class="table-responsive" v-if="cate.length">
+    <ul class="nav nav-tabs" >
+        <li role="presentation" :class="{active:v.id == currentCate}" v-for="v in cate" @click="changeCate(v.id)"><a href="#">{{v.name}}</a></li>
+    </ul>
+    <div class="haha" v-show="1 == currentCate?'show':''" style="background-color: lightpink">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>商品详情</th>
+            </tr>
+            <tr v-for="v in bed">
+                <td>{{v.id}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.price}}</td>
+                <td>{{v.thumb}}</td>
+                <td>{{v.detail}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="haha" v-show="2 == currentCate?'show':''" style="background-color:lightsalmon">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>商品详情</th>
+            </tr>
+            <tr v-for="v in goods2">
+                <td>{{v.id}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.price}}</td>
+                <td>{{v.thumb}}</td>
+                <td>{{v.detail}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="haha" v-show="3 == currentCate?'show':''" style="background-color:khaki">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>商品详情</th>
+            </tr>
+            <tr v-for="v in goods3">
+                <td>{{v.id}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.price}}</td>
+                <td>{{v.thumb}}</td>
+                <td>{{v.detail}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="static/vue.js"></script>
+<script>
+    let vm  = new Vue({
+        el:'#box',
+        data:{
+            active:'active',
+            cate:[
+                {id:1,name:"床"},{id:2,name:"沙发"},{id:3,name:"茶几"}
+            ],
+            show:true,
+            currentCate:1,
+            bed: [
+                { id: 1, name: "高级床", price:800, thumb:300,detail:'这个床非常棒' },
+                { id: 2, name: "中级床", price:800, thumb:300,detail:'这个床非常棒' },
+                { id: 3, name: "低级床", price:800, thumb:300,detail:'这个床非常棒' },
+            ],
+            goods2: [
+                { id: 1, name: "高级沙发", price:800, thumb:300,detail:'这个沙发非常棒' },
+                { id: 2, name: "中级沙发", price:800, thumb:300,detail:'这个沙发非常棒' },
+                { id: 3, name: "低级沙发", price:800, thumb:300,detail:'这个沙发非常棒' },
+            ],
+            goods3: [
+                { id: 1, name: "高级茶几", price:800, thumb:300,detail:'这个茶几非常棒' },
+                { id: 2, name: "中级茶几", price:800, thumb:300,detail:'这个茶几非常棒' },
+                { id: 3, name: "低级茶几", price:800, thumb:300,detail:'这个茶几非常棒' },
+            ]
+        },
+        methods:{
+            changeCate(id){
+                this.currentCate = id;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+.loading {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto; }
+  .loading > .loading-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .loading > .loading-box > .loading-box-circle {
+      width: 20px;
+      height: 20px;
+      background: #ffdca6;
+      border-radius: 50%;
+      animation: toggle 1s infinite ease;
+      margin: 0 auto; }
+
+.loading > .loading-box:nth-child(1) {
+  transform: rotateZ(15deg); }
+  .loading > .loading-box:nth-child(1) > .loading-box-circle {
+    animation-delay: 41.47ms; }
+
+.loading > .loading-box:nth-child(2) {
+  transform: rotateZ(30deg); }
+  .loading > .loading-box:nth-child(2) > .loading-box-circle {
+    animation-delay: 82.94ms; }
+
+.loading > .loading-box:nth-child(3) {
+  transform: rotateZ(45deg); }
+  .loading > .loading-box:nth-child(3) > .loading-box-circle {
+    animation-delay: 124.41ms; }
+
+.loading > .loading-box:nth-child(4) {
+  transform: rotateZ(60deg); }
+  .loading > .loading-box:nth-child(4) > .loading-box-circle {
+    animation-delay: 165.88ms; }
+
+.loading > .loading-box:nth-child(5) {
+  transform: rotateZ(75deg); }
+  .loading > .loading-box:nth-child(5) > .loading-box-circle {
+    animation-delay: 207.35ms; }
+
+.loading > .loading-box:nth-child(6) {
+  transform: rotateZ(90deg); }
+  .loading > .loading-box:nth-child(6) > .loading-box-circle {
+    animation-delay: 248.82ms; }
+
+.loading > .loading-box:nth-child(7) {
+  transform: rotateZ(105deg); }
+  .loading > .loading-box:nth-child(7) > .loading-box-circle {
+    animation-delay: 290.29ms; }
+
+.loading > .loading-box:nth-child(8) {
+  transform: rotateZ(120deg); }
+  .loading > .loading-box:nth-child(8) > .loading-box-circle {
+    animation-delay: 331.76ms; }
+
+.loading > .loading-box:nth-child(9) {
+  transform: rotateZ(135deg); }
+  .loading > .loading-box:nth-child(9) > .loading-box-circle {
+    animation-delay: 373.23ms; }
+
+.loading > .loading-box:nth-child(10) {
+  transform: rotateZ(150deg); }
+  .loading > .loading-box:nth-child(10) > .loading-box-circle {
+    animation-delay: 414.7ms; }
+
+.loading > .loading-box:nth-child(11) {
+  transform: rotateZ(165deg); }
+  .loading > .loading-box:nth-child(11) > .loading-box-circle {
+    animation-delay: 456.17ms; }
+
+.loading > .loading-box:nth-child(12) {
+  transform: rotateZ(180deg); }
+  .loading > .loading-box:nth-child(12) > .loading-box-circle {
+    animation-delay: 497.64ms; }
+
+.loading > .loading-box:nth-child(13) {
+  transform: rotateZ(195deg); }
+  .loading > .loading-box:nth-child(13) > .loading-box-circle {
+    animation-delay: 539.11ms; }
+
+.loading > .loading-box:nth-child(14) {
+  transform: rotateZ(210deg); }
+  .loading > .loading-box:nth-child(14) > .loading-box-circle {
+    animation-delay: 580.58ms; }
+
+.loading > .loading-box:nth-child(15) {
+  transform: rotateZ(225deg); }
+  .loading > .loading-box:nth-child(15) > .loading-box-circle {
+    animation-delay: 622.05ms; }
+
+.loading > .loading-box:nth-child(16) {
+  transform: rotateZ(240deg); }
+  .loading > .loading-box:nth-child(16) > .loading-box-circle {
+    animation-delay: 663.52ms; }
+
+.loading > .loading-box:nth-child(17) {
+  transform: rotateZ(255deg); }
+  .loading > .loading-box:nth-child(17) > .loading-box-circle {
+    animation-delay: 704.99ms; }
+
+.loading > .loading-box:nth-child(18) {
+  transform: rotateZ(270deg); }
+  .loading > .loading-box:nth-child(18) > .loading-box-circle {
+    animation-delay: 746.46ms; }
+
+.loading > .loading-box:nth-child(19) {
+  transform: rotateZ(285deg); }
+  .loading > .loading-box:nth-child(19) > .loading-box-circle {
+    animation-delay: 787.93ms; }
+
+.loading > .loading-box:nth-child(20) {
+  transform: rotateZ(300deg); }
+  .loading > .loading-box:nth-child(20) > .loading-box-circle {
+    animation-delay: 829.4ms; }
+
+.loading > .loading-box:nth-child(21) {
+  transform: rotateZ(315deg); }
+  .loading > .loading-box:nth-child(21) > .loading-box-circle {
+    animation-delay: 870.87ms; }
+
+.loading > .loading-box:nth-child(22) {
+  transform: rotateZ(330deg); }
+  .loading > .loading-box:nth-child(22) > .loading-box-circle {
+    animation-delay: 912.34ms; }
+
+.loading > .loading-box:nth-child(23) {
+  transform: rotateZ(345deg); }
+  .loading > .loading-box:nth-child(23) > .loading-box-circle {
+    animation-delay: 953.81ms; }
+
+.loading > .loading-box:nth-child(24) {
+  transform: rotateZ(360deg); }
+  .loading > .loading-box:nth-child(24) > .loading-box-circle {
+    animation-delay: 995.28ms; }
+
+@keyframes toggle {
+  from {
+    opacity: 0;
+    transform: scale(0, 0); }
+  to {
+    opacity: 1;
+    transform: scale(1.5, 1.5); } }

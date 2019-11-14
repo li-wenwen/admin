@@ -1,0 +1,282 @@
+ body,
+ ul,
+ li {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+ 
+ .head {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 0.88rem;
+     line-height: 0.88rem;
+     font-size: 16px;
+     text-align: center;
+     z-index: 666;
+     background-color: #fff;
+     border-bottom: 1px solid #F6F6F4;
+ }
+ 
+ body {
+     padding-top: 0.88rem;
+ }
+ 
+ .box {
+     width: 100%;
+ }
+ 
+ .banner {
+     width: 100%;
+     overflow: hidden;
+ }
+ 
+ .banner>img {
+     width: 100%;
+     overflow: hidden;
+ }
+ 
+ .top {
+     width: 94%;
+     margin: 10px 3% 0px 3%;
+     height: 2.8rem;
+     border: 1px solid #DEDEDE;
+ }
+ 
+ .toptupian {
+     position: relative;
+     width: 2.8rem;
+     height: 2.8rem;
+     float: left;
+     text-align: center;
+ }
+ 
+ .toptupian>img {
+     width: 2rem;
+     display: inline-block;
+     margin-top: 0.4rem;
+ }
+ 
+ .hezi {
+     width: 3.2rem;
+     display: block;
+     margin-left: 3.5rem;
+     height: 2.2rem;
+     margin-top: 0.3rem;
+ }
+ 
+ .hezi.zi {
+     width: 95%;
+     float: left;
+     height: 0.8rem;
+     line-height: 0.4rem;
+     font-size: 0.28rem;
+ }
+ 
+ .qianshu {
+     /* float: left; */
+     margin-top: 0.2rem;
+     font-size: 16px;
+     color: #EF7D00;
+ }
+ 
+ .hezi>.qwe {
+     display: inline-block;
+     padding-top: 0.2rem;
+     margin-left: 0.3rem;
+     font-size: 14px;
+     color: #8D8D8D;
+     text-decoration: line-through;
+     font-style: normal;
+ }
+ 
+ .goumai {
+     padding: 0px 15px;
+     float: left;
+     height: 0.56rem;
+     line-height: 0.56rem;
+     width: 1.8rem;
+     border: none;
+     outline: none;
+     background: #F47C02;
+     color: #fff;
+     border-radius: 15px;
+     font-size: 14px;
+     margin-top: 0.08rem;
+     margin-left: 0.4rem;
+     text-align: center;
+ }
+ 
+ .yisongyi {
+     width: 1rem;
+     height: 1rem;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     background: url("../../views/content/img/index/sg5.png") no-repeat center center;
+     background-size: 100%;
+ }
+ 
+ .banner2 {
+     width: 100%;
+     overflow: hidden;
+ }
+ 
+ .banner2>img {
+     width: 100%;
+     overflow: hidden;
+ }
+ 
+ .border {
+     width: 100%;
+     height: 8.5rem;
+     float: left;
+ }
+ 
+ .border-hezi {
+     position: relative;
+     width: 33.3%;
+     height: 4.26rem;
+     float: left;
+     background: #fff;
+ }
+ 
+ .special {
+     width: 100%;
+     float: left;
+ }
+ 
+ .special>img {
+     width: 60%;
+     display: inline-block;
+     margin: 5px 0px;
+     margin-left: 0.45rem;
+ }
+ 
+ .border-hezizi {
+     width: 100%;
+     padding: 3% 3%;
+     float: left;
+     line-height: 0.4rem;
+     height: 0.8rem;
+     overflow: hidden;
+     font-size: 14px;
+ }
+ 
+ .jiage>.asd {
+     margin-top: 0.2rem;
+     font-size: 14px;
+     color: #EF7D00;
+     margin-left: 0.1rem;
+ }
+ 
+ .jiage>.zxc {
+     display: inline-block;
+     padding-top: 0.2rem;
+     margin-left: 0.09rem;
+     font-size: 12px;
+     color: #8D8D8D;
+     text-decoration: line-through;
+     font-style: normal;
+ }
+ 
+ .goumai1 {
+     width: 90%;
+     float: left;
+     height: 0.56rem;
+     line-height: 0.56rem;
+     font-size: 14px;
+     color: #fff;
+     text-align: center;
+     margin-left: 5%;
+     background: #FF9201;
+     border-radius: 15px;
+     margin-top: 0.24rem;
+ }
+ 
+ .yisongyi {
+     width: 1rem;
+     height: 1rem;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     background: url("../../views/content/img/index/sg5.png") no-repeat center center;
+     background-size: 100%;
+ }
+ 
+ .title {
+     width: 100%;
+     height: 0.8rem;
+     float: left;
+     text-align: center;
+     line-height: 0.8rem;
+     background: #fff;
+     font-size: 16px;
+     border-bottom: 1px solid #DCDCDC;
+ }
+ 
+ .title1 {
+     width: 94%;
+     height: 4.8rem;
+     float: left;
+     background: #fff;
+     padding: 0.3rem 3%;
+     font-size: 14px;
+     line-height: 0.44rem;
+ }
+ 
+ .title1>P {
+     margin-top: 0.1rem;
+ }
+ 
+ .bottom {
+     width: 100%;
+     height: 1rem;
+     line-height: 1rem;
+     background: white;
+     position: fixed;
+     bottom: 0px;
+     left: 0px;
+     border-top: 1px solid #F4F4F4;
+ }
+ 
+ .bottom-left {
+     width: 1.2rem;
+     height: 1.2rem;
+     position: absolute;
+     bottom: 0.2rem;
+     left: 0.2rem;
+     background: url("http://wgd950123.coding.me/PC/images/bottom-cart.png") no-repeat center center #FFD608;
+     background-size: 50%;
+     border-radius: 50%;
+ }
+ 
+ .bottom-left p {
+     width: 0.3rem;
+     height: 0.3rem;
+     float: right;
+     background: #FF9201;
+     text-align: center;
+     line-height: 0.3rem;
+     font-size: 12px;
+     color: #fff;
+     border-radius: 50%;
+ }
+ 
+ .text {
+     float: left;
+     font-size: 16px;
+     color: #FF9201;
+     margin-left: 1.6rem;
+ }
+ 
+ .huang {
+     width: 2rem;
+     height: 100%;
+     float: right;
+     background: #FED700;
+     color: #fff;
+     text-align: center;
+ }

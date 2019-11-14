@@ -1,0 +1,41 @@
+@import "demo";
+@import "mixin";
+.loding{
+    position: relative;
+    width: $width;
+    height:$height;
+    @include positionHorVerCenter;
+    > .loding-box{
+       position: absolute;
+       top:0;
+       left:0;
+       @include percentage;
+        > .loding-box-circle{
+            width: 20px;
+            height: 20px;
+            background: darkseagreen;
+            border-radius: 50%;
+            animation: toggle 1s infinite ease;
+            @include horCenter;
+        }
+    }
+}
+
+@for $i from 1 through $num{
+  .loding-box > .loding-box:nth-child(#{$i}){
+    transform: rotateZ(#{$i*$deg}deg);
+    > .loding-box-circle{
+      animation-delay: $i * 41.67ms;
+    }
+  }
+}
+@keyframes toggle {
+  from{
+    opacity: 0;
+    transform: scale(0,0);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1.5,1.5);
+  }
+}
